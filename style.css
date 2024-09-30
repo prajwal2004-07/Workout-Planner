@@ -1,0 +1,225 @@
+/* Base styles - Mobile first */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    font-size: 16px;
+}
+
+.container {
+    width: 95%;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.workout-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Button styles */
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Workout list styles */
+.workout-list h3 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.1em;
+}
+
+.workout-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.workout-item p {
+    margin: 6px 0;
+    font-size: 0.9em;
+}
+
+/* Spreadsheet styles */
+#spreadsheet-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Export button styles */
+.export-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #2ecc71;
+    font-size: 1em;
+}
+
+/* Day header styles */
+#day-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+/* Background image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/api/placeholder/800/600');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+/* Add icons to buttons */
+button::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+#save-button::before {
+    content: "\f0c7"; /* Save icon */
+}
+
+#toggle-view-button::before {
+    content: "\f24d"; /* Toggle icon */
+}
+
+.export-button::before {
+    content: "\f1c3"; /* Excel icon */
+}
+
+/* Media Queries for larger screens */
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .button-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        width: auto;
+        padding: 12px 20px;
+    }
+
+    .workout-item p {
+        font-size: 1em;
+    }
+
+    #spreadsheet-container {
+        height: 400px;
+    }
+
+    body::before {
+        background-image: url('/api/placeholder/1920/1080');
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    input, select {
+        padding: 12px;
+    }
+
+    button {
+        padding: 14px 24px;
+    }
+
+    #spreadsheet-container {
+        height: 500px;
+    }
+}
